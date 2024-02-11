@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="container__title">
+        Spli <br />
+        tter
+      </h1>
+      <div class="card">
+        <form action="" novalidate class="card__form">
+          <div class="card__container">
+            <label for="bill" class="card__label">Bill</label>
+            <input
+              type="number"
+              id="bill"
+              class="card__input"
+              placeholder="0"
+              min="0"
+              maxlength="5"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            />
+          </div>
+          <div class="card__container">
+            <div class="error__container">
+              <label for="n_people" class="card__label">Number of People</label>
+            </div>
+            <input
+              type="number"
+              id="n_people"
+              class="card__input"
+              placeholder="0"
+              min="0"
+              maxlength="2"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            />
+          </div>
+          <div class="card__container">
+            <label class="card__label">Select Tip %</label>
+            <div class="card__tip_menu">
+              <button class="button button__tip" value="0.05">5%</button>
+              <button class="button button__tip" value="0.1">10%</button>
+              <button class="button button__tip" value="0.15">15%</button>
+              <button class="button button__tip" value="0.25">25%</button>
+              <button class="button button__tip" value="0.5">50%</button>
+              <input
+                type="number"
+                class="tip__custom"
+                id="custom"
+                placeholder="Custom"
+                min="0"
+                maxlength="4"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              />
+            </div>
+          </div>
+        </form>
+        <div class="card__left">
+          <div class="left__container">
+            <div class="cost__container">
+              <h2 class="left__title">Tip Amount</h2>
+              <p class="left__subtitle">/ person</p>
+            </div>
+            <h1 class="left__cost"><span id="tip_amount">$0.00</span></h1>
+          </div>
+          <div class="left__container">
+            <div class="cost__container">
+              <h2 class="left__title">Total</h2>
+              <p class="left__subtitle">/ person</p>
+            </div>
+            <h1 class="left__cost"><span id="total">$0.00</span></h1>
+          </div>
+          <button class="button button__reset">Reset</button>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
